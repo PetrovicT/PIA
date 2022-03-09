@@ -8,6 +8,7 @@ const cors_1 = __importDefault(require("cors"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const user_1 = __importDefault(require("./model/user"));
+const user_routes_1 = __importDefault(require("./routers/user.routes"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
@@ -17,16 +18,22 @@ conn.once('open', () => {
     console.log('Uspesna konekcija na bazu!');
 });
 const router = express_1.default.Router();
-router.route('/login').post((req, res) => {
+router.route('/changePassword').post((req, res) => {
     let username = req.body.username;
-    let password = req.body.password;
-    user_1.default.findOne({ "username": username, "password": password }, (err, user) => {
+    let oldPassword = req.body.oldPassword;
+    let newPassword = req.body.newPassword;
+    // check if user entered good password
+    user_1.default.findOne({ "username": username, "password": oldPassword }, (err, userX) => {
         if (err)
             console.log(err);
-        else
-            res.json(user);
+        else {
+            // change password
+            user_1.default.collection.updateOne({ "username": username }, { $set: { "password": newPassword } });
+            res.json(userX);
+        }
     });
 });
+router.use('/users', user_routes_1.default);
 app.use('/', router);
 app.listen(4000, () => console.log(`Express server running on port 4000`));
 //# sourceMappingURL=server.js.map

@@ -16,4 +16,21 @@
             <td>{{user.type}}</td>
         </tr>
     </table>
+<div>
+<div>
+    <p>Promeni lozinku - nova lozinka:</p>
+    <input type="text" name="newPassword" [(ngModel)]='newPassword'>
+</div>
+<div>
+    <p>Stara lozinka:</p>
+    <input type="text" name="oldPassword" [(ngModel)]='oldPassword'> 
+</div>
+<div>
+    <button (click)='changePassword()'>Promeni lozinku</button>
+</div>
+<span class="correct">{{messageGood}}</span>
+<span class="error">{{messageGood}}</span>
+</div>
+
+
 </div>

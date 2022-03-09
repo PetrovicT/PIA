@@ -14,7 +14,16 @@ export class UserService {
       username: username,
       password: password
     }
-    return this.http.post(`${this.uri}/login`, data);
+    return this.http.post(`${this.uri}/users/login`, data);
+  }
+
+  changePassword(oldPassword, newPassword, username){
+    const data={
+      oldPassword: oldPassword,
+      newPassword: newPassword,
+      username: username
+    }
+    return this.http.post(`${this.uri}/changePassword`, data);
   }
 }
 

@@ -1,1 +1,97 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Oswald"
+        }
+
+        body {
+            font-family: "Open Sans"
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header-->
+    <header></header>
+
+    <!-- Register -->
+    <div class="background">
+        <div class="registerBox">
+            <div class="title"><b>Formular za registraciju</b></div>
+
+            <div class="inputBox">
+                <div class="">
+                    <form>
+                        <div>
+                            <input type="text" placeholder="Korisničko ime" required class="inputField" name="username" [(ngModel)]='username'>
+                            <span class='error'>{{messageUsername}}</span>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Šifra" required class="inputField" name="password" [(ngModel)]='password'>
+                            <span class='error'>{{messagePassword}}</span>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Ime" required class="inputField" name="name" [(ngModel)]='name'>
+                            <span class='error'>{{messageName}}</span>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Prezime" required class="inputField" name="surname" [(ngModel)]='surname'>
+                            <span class='error'>{{messageSurname}}</span>
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" required class="inputField" name="email" [(ngModel)]='email'>
+                            <span class='error'>{{messageEmail}}</span>
+                        </div>
+                        <div class="birthday">
+                            Datum rodjenja:
+                            <input type="date" placeholder="Datum rodjenja" required class="inputField" name="birthday" [(ngModel)]='birthday'>
+                            <span class='error'>{{messageBirthday}}</span>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Visina" required class="inputField" name="height" [(ngModel)]='height'>
+                            <span class='error'>{{messageHeight}}</span>
+                        </div>
+                        <div>
+                            <select name="type" id="type" [(ngModel)]='type' class="smallInputField">
+                                <option value="" class="text_center" selected>--------------- Tip korisnika -------------- </option>
+                                <option value="kupac"> kupac </option>
+                                <option value="prodavac"> prodavac</option>
+                            </select>
+                            <span class='error'>{{messageType}}</span>
+                        </div>
+                        <div class="buttonsDarkBlue darkBlueGradient buttonInput" (click)='register()'>
+                            <p class="bigLetters white">Registrujte se</p>
+                        </div>
+                        <div class="loginlink" (click)='showLoginWindow()'>
+                            Već imate korisnički nalog? <span class="darkblueletters underline"><b>Ulogujte se</b></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footerStyle darkBlueGradient">
+        <p class="footerText">Agencija za nekretnine</p>
+        <p class="footerText">Kurs: Programiranje internet aplikacija</p>
+        <p class="footerText">Teodora Petrović</p>
+    </footer>
+
+</body>
+
+</html>

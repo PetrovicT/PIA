@@ -19,9 +19,9 @@ div.title{
     padding:30px;
     border-radius:20px;
     border-color: #021B79;
-    box-shadow: 10px 15px 10px rgba(0,0,0,0.1);
-    margin-top: 8%;
-    margin-bottom: 8%;
+    box-shadow: 5px 10px 10px 10px rgba(0,0,0,0.2);
+    margin-top: 110px;
+    margin-bottom: 110px;
 }
 
 .inputBox{

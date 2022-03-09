@@ -1,0 +1,78 @@
+.background{
+    background: #fff;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+div.title{
+    text-align: center;
+    font-size: 200%;
+    color: darkblue;
+}
+
+
+.registerBox{
+    width: 330px;
+    background: #fff;
+    padding:30px;
+    border-radius:20px;
+    border-color: #021B79;
+    box-shadow: 5px 10px 10px 10px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.inputBox{
+    height:fit-content;
+    width:100%;
+    margin-top: 20px;  
+}
+
+.inputField{
+    height: 3100%;
+    width:90%;
+    outline:none;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size:17px;
+    border-radius:6px;
+    border: 1px solid black;
+    border-bottom-width:2px;
+    margin-top: 8px;
+}
+
+.inputField:focus{
+    border-color: #021B79;
+}
+
+.loginlink{
+    padding-top: 2px;
+}
+
+.buttonInput{
+    width:100%;
+}
+
+.smallInputField{
+        height: 3100%;
+        width: 100%;
+        outline:none;
+        padding-left:15px;
+        padding-right:15px;
+        padding-top:5px;
+        padding-bottom:5px;
+        font-size:17px;
+        color: #666666;
+        border-radius:6px;
+        border: 1px solid black;
+        border-bottom-width:2px;
+        margin-top: 8px;
+}
+
+.birthday{
+    margin-top: 8px;
+    color: #666666;
+}

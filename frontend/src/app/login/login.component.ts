@@ -19,6 +19,10 @@ export class LoginComponent implements OnInit {
   password: string;
   message: string;
 
+  showRegisterWindow(){
+    this.ruter.navigate(['register']);
+  }
+  
   login(){
     this.message = '';
     this.userService.login(this.username, this.password).subscribe((user: User)=>{
