@@ -1,0 +1,8 @@
+.userDetails{
+    background-color: lightgray;
+}
+
+th, td {
+    border: 1px solid darkblue;
+    text-align: center;
+}

@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*----------------------------------------- footer------------------------------------------------ */
+.footerStyle{
+    padding: 30px;
+}
+
+.footerText{
+    color: white; 
+    font-weight: normal;
+}
+
+/*----------------------------------------- buttons ---------------------------------------------- */
+.buttonsDarkBlue {
+	background-color: #021B79 !important;
+	color:white !important;  
+    height: 30px;
+    border-radius: 6px;
+    cursor:pointer;   
+}
+
+/*----------------------------------------- letters ---------------------------------------------- */
+.bigLetters{
+    font-size:20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/*----------------------------------------- orientation ------------------------------------------ */
+.center{
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/*----------------------------------------- colors ---------------------------------------------- */
+.darkblue {
+	background-color: #021B79;
+}
+
+.darkblueletters{
+    color: #021B79;
+}
+
+.darkBlueGradient {        
+	background: #0575E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #021B79, #0a63bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.blue {
+	background-color: rgb(58, 80, 148);
+}
+
+.blueletters{
+    color: rgb(58, 80, 148);
+}
+
+.blueGradient{        
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+}
+
+.white{
+    color: white;
+}
+
+.error{
+    color: red;
+}

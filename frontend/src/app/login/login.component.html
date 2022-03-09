@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Oswald"
+        }
+
+        body {
+            font-family: "Open Sans"
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header-->
+    <header></header>
+
+    <!-- Login -->
+    <div class="background">
+        <div class="loginBox">
+            <div class="title"><b>Formular za logovanje</b></div>
+
+            <div class="inputBox">
+                <div class="">
+                    <form>
+                        <div>
+                            <input type="text" placeholder="Korisničko ime" required class="inputField" name="username" [(ngModel)]='username'>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Šifra" required class="inputField" name="password" [(ngModel)]='password'>
+                            <span class='error'>{{message}}</span>
+                        </div>
+                        <div class="buttonsDarkBlue darkBlueGradient buttonInput" (click)='login()'>
+                            <p class="bigLetters white">Ulogujte se</p>
+                        </div>
+                        <div class="loginlink">
+                            Nemate korisnički nalog? <a href=""><b>Registrujte se</b></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footerStyle darkBlueGradient">
+        <p class="footerText">Agencija za nekretnine</p>
+        <p class="footerText">Kurs: Programiranje internet aplikacija</p>
+        <p class="footerText">Teodora Petrović</p>
+    </footer>
+
+</body>
+
+</html>

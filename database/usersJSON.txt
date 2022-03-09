@@ -1,0 +1,24 @@
+[
+   {
+      "username":"TeodoraP",
+      "password":"sifraT",
+      "name":"Teodora",
+      "surname":"Petrovic",
+      "email":"teodora@gmail.com",
+      "birthday":"21-07-1999",
+      "height":157,
+      "type":"kupac"
+    
+   },
+   {
+      "username":"AnaM",
+      "password":"sifraA",
+      "name":"Ana",
+      "surname":"Milosevic",
+      "email":"ana@gmail.com",
+      "birthday":"04-04-1999",
+      "height":164,
+      "type":"prodavac"
+    
+   }
+]
