@@ -13,6 +13,15 @@ export class UserController{
         })
     }
 
+    findUser = (req: express.Request, res: express.Response)=>{
+        let username = req.body.username;
+        let password = req.body.password;
+
+        user.findOne({"username":username, "password": password}, (err, user)=>{
+            if(err) console.log(err);
+            else res.json(user);
+        })
+    }
 /*
     register = (req: express.Request, res: express.Response)=>{
         let user = new User({firstname: req.body.firstname, lastname: req.body.lastname,
@@ -29,4 +38,23 @@ export class UserController{
        
    }
     */
+
+   changePassword = (req: express.Request, res: express.Response)=>{
+    let username = req.body.username;
+    let oldPassword = req.body.oldPassword;
+    let newPassword = req.body.newPassword;
+    console.log(username);
+    console.log(oldPassword);
+    console.log(newPassword);
+    // check if user entered good password
+    user.findOne({"username":username, "password": oldPassword}, (err, userX)=>{
+        if(!userX){ console.log(err);
+        }
+        else {
+            // change password
+            user.collection.updateOne({"username":username}, {$set: {"password": newPassword}});
+            res.json(userX);
+        }
+    })
+}
 }

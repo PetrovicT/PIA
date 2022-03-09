@@ -17,13 +17,21 @@ export class UserService {
     return this.http.post(`${this.uri}/users/login`, data);
   }
 
+  findUser(username, password){
+    const data={
+      username: username,
+      password: password
+    }
+    return this.http.post(`${this.uri}/users/findUser`, data);
+  }
+
   changePassword(oldPassword, newPassword, username){
     const data={
       oldPassword: oldPassword,
       newPassword: newPassword,
       username: username
     }
-    return this.http.post(`${this.uri}/changePassword`, data);
+    return this.http.post(`${this.uri}/users/changePassword`, data);
   }
 }
 
