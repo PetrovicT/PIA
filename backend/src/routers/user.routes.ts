@@ -5,11 +5,11 @@ const userRouter = express.Router();
 userRouter.route('/login').post(
     (req, res)=>new UserController().login(req, res)
 )
-/*
+
 userRouter.route('/register').post(
     (req, res)=>new UserController().register(req, res)
 )
-*/
+
 
 userRouter.route('/changePassword').post(
     (req, res)=>new UserController().changePassword(req, res)

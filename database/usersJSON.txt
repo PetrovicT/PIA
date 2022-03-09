@@ -5,7 +5,7 @@
       "name":"Teodora",
       "surname":"Petrovic",
       "email":"teodora@gmail.com",
-      "birthday":"21-07-1999",
+      "birthday":"1999-07-21",
       "height":157,
       "type":"kupac"
     
@@ -16,7 +16,7 @@
       "name":"Ana",
       "surname":"Milosevic",
       "email":"ana@gmail.com",
-      "birthday":"04-04-1999",
+      "birthday":"1999-04-04",
       "height":164,
       "type":"prodavac"
     

@@ -33,9 +33,7 @@ export class UserComponent implements OnInit {
       else {
         this.messageGood = 'Uspešno ste promenili lozinku!';
         this.messageError = "";
-        // update user informations
-
-
+        // update user informations on the screen
         this.userService.findUser(this.user.username, this.newPassword).subscribe((user: User) => {
           if (!user) {
             console.log("Nije pronadjen user u findUser nakon update lozinke");
@@ -45,13 +43,7 @@ export class UserComponent implements OnInit {
             localStorage.setItem("user", JSON.stringify(user));
           }
         })
-
-
-
-
-
-
-        
+ 
         this.ruter.navigate(['user']);
         location.reload();
       }

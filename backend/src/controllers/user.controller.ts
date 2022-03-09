@@ -1,5 +1,5 @@
 import * as express from 'express';
-import user from '../model/user';
+import User from '../model/user';
 
 
 export class UserController{
@@ -7,7 +7,7 @@ export class UserController{
         let username = req.body.username;
         let password = req.body.password;
 
-        user.findOne({"username":username, "password": password}, (err, user)=>{
+        User.findOne({"username":username, "password": password}, (err, user)=>{
             if(err) console.log(err);
             else res.json(user);
         })
@@ -17,27 +17,23 @@ export class UserController{
         let username = req.body.username;
         let password = req.body.password;
 
-        user.findOne({"username":username, "password": password}, (err, user)=>{
+        User.findOne({"username":username, "password": password}, (err, user)=>{
             if(err) console.log(err);
             else res.json(user);
         })
     }
-/*
+
     register = (req: express.Request, res: express.Response)=>{
-        let user = new User({firstname: req.body.firstname, lastname: req.body.lastname,
-                username: req.body.username, password: req.body.password, type: req.body.type })
-
-        //let user = new User(req.body)
-
-        user.save().then(user=>{
+        let newUser = new User({username: req.body.username, password: req.body.password,
+            name: req.body.name, surname: req.body.surname, email: req.body.email, birthday: req.body.birthday,
+            height: req.body.height, type: req.body.type })
+       
+            newUser.save().then(newUser=>{
             res.status(200).json({'message': 'user added'});
         }).catch(err=>{
             res.status(400).json({'message': 'error'})
         })
-
-       
    }
-    */
 
    changePassword = (req: express.Request, res: express.Response)=>{
     let username = req.body.username;
@@ -47,12 +43,12 @@ export class UserController{
     console.log(oldPassword);
     console.log(newPassword);
     // check if user entered good password
-    user.findOne({"username":username, "password": oldPassword}, (err, userX)=>{
+    User.findOne({"username":username, "password": oldPassword}, (err, userX)=>{
         if(!userX){ console.log(err);
         }
         else {
             // change password
-            user.collection.updateOne({"username":username}, {$set: {"password": newPassword}});
+            User.collection.updateOne({"username":username}, {$set: {"password": newPassword}});
             res.json(userX);
         }
     })

@@ -17,6 +17,31 @@ export class UserService {
     return this.http.post(`${this.uri}/users/login`, data);
   }
 
+
+
+  username: string;
+  password: string;
+  name: string;
+  surname: string;
+  email: string;
+  birthday: string; // saved as 2022-03-16 
+  height: number;
+  type: string;
+
+  register(username, password, name, surname, email, birthday, height, type){
+    const data={
+      username: username,
+      password: password,
+      name: name,
+      surname: surname,
+      email: email,
+      birthday: birthday,
+      height: height,
+      type: type
+    }
+    return this.http.post(`${this.uri}/users/register`, data);
+  }
+
   findUser(username, password){
     const data={
       username: username,
