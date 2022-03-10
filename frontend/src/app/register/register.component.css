@@ -13,7 +13,7 @@ div.title{
 
 
 .registerBox{
-    width: 330px;
+    width: 303px;
     background: #fff;
     padding:30px;
     border-radius:20px;
@@ -31,7 +31,7 @@ div.title{
 
 .inputField{
     height: 3100%;
-    width:90%;
+    width:90% !important;
     outline:none;
     padding-left:15px;
     padding-right:15px;
@@ -44,6 +44,22 @@ div.title{
     margin-top: 8px;
 }
 
+.center{
+  align-items: center;
+  margin-top: 8px;
+
+}
+
+.captcha{
+    width: 100%;
+    padding: 0;
+    margin-top: 8px;
+    outline:none;
+    font-size:17px;
+    width: 450px;
+    
+}
+
 .inputField:focus{
     border-color: #021B79;
 }
@@ -54,6 +70,12 @@ div.title{
 
 .buttonInput{
     width:100%;
+}
+
+.buttonInputSmall{
+    width: 35% !important;
+    border: 1px solid black;
+    border-color: #021B79;
 }
 
 .smallInputField{
@@ -75,4 +97,12 @@ div.title{
 .birthday{
     margin-top: 8px;
     color: #666666;
+}
+
+.fileUpload{
+    margin-top: 8px;
+}
+
+.miniMargin{
+    margin-top: 2px;
 }

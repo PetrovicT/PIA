@@ -37,47 +37,93 @@
                 <div class="">
                     <form>
                         <div>
-                            <input type="text" placeholder="Korisničko ime" required class="inputField" name="username" [(ngModel)]='username'>
+                            <input type="text" placeholder="Korisničko ime" required class="inputField" name="username"
+                                [(ngModel)]='username'>
                             <span class='error'>{{messageUsername}}</span>
                         </div>
                         <div>
-                            <input type="password" placeholder="Šifra" required class="inputField" name="password" [(ngModel)]='password'>
+                            <input type="password" placeholder="Šifra" required class="inputField" name="password"
+                                [(ngModel)]='password'>
                             <span class='error'>{{messagePassword}}</span>
                         </div>
                         <div>
-                            <input type="text" placeholder="Ime" required class="inputField" name="name" [(ngModel)]='name'>
+                            <input type="text" placeholder="Ime" required class="inputField" name="name"
+                                [(ngModel)]='name'>
                             <span class='error'>{{messageName}}</span>
                         </div>
                         <div>
-                            <input type="text" placeholder="Prezime" required class="inputField" name="surname" [(ngModel)]='surname'>
+                            <input type="text" placeholder="Prezime" required class="inputField" name="surname"
+                                [(ngModel)]='surname'>
                             <span class='error'>{{messageSurname}}</span>
                         </div>
                         <div>
-                            <input type="email" placeholder="Email" required class="inputField" name="email" [(ngModel)]='email'>
+                            <input type="email" placeholder="Email" required class="inputField" name="email"
+                                [(ngModel)]='email'>
                             <span class='error'>{{messageEmail}}</span>
                         </div>
                         <div class="birthday">
                             Datum rođenja:
-                            <input type="date" placeholder="Datum rođenja" required class="inputField" name="birthday" [(ngModel)]='birthday'>
+                            <input type="date" placeholder="Datum rođenja" required class="inputField" name="birthday"
+                                [(ngModel)]='birthday'>
                             <span class='error'>{{messageBirthday}}</span>
                         </div>
                         <div>
-                            <input type="text" placeholder="Visina" required class="inputField" name="height" [(ngModel)]='height'>
+                            <input type="text" placeholder="Visina" required class="inputField" name="height"
+                                [(ngModel)]='height'>
                             <span class='error'>{{messageHeight}}</span>
                         </div>
                         <div>
                             <select name="type" id="type" [(ngModel)]='type' class="smallInputField">
-                                <option value="" class="text_center" selected>--------------- Tip korisnika -------------- </option>
+                                <option value="" class="text_center" selected>--------------- Tip korisnika
+                                    -------------- </option>
                                 <option value="kupac"> kupac </option>
                                 <option value="prodavac"> prodavac</option>
                             </select>
                             <span class='error'>{{messageType}}</span>
                         </div>
+
+                      
+                        <input multiple type="file" class="fileUpload" 
+                            (change)="chooseFiles($event)" #fileUpload accept="image/png, image/jpeg">
+
+                        <div class="file-upload">
+                            <span class='error'>{{messageUpload}}</span>
+                         
+                            <div class="darkblueletters miniMargin">
+                                <input type="button" class="darkBlueGradient buttonsDarkBlue buttonInputSmall smallLetters"
+                                    value="Pošalji" (click)="upload()" />
+                            </div>
+                            <span class='correct'>{{messageUploadGood}}</span>
+                        </div>
+
+
+
+                        <div class="container-fluid">
+                            <form #form="ngForm" class="">
+                                <div class="captcha">
+                                    <re-captcha class="" id="" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token"
+                                        required
+                                        [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">
+                                    </re-captcha>
+                                    <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"
+                                        class="error">
+                                        <div *ngIf="recaptcha.errors?.['required']">Obavezno potvrdite da niste robot.
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="darkblueletters miniMargin">
+                            <input type="button" class="darkBlueGradient buttonsDarkBlue buttonInputSmall smallLetters"
+                                value="Potvrdi" (click)="send(form)" />
+                        </div>
                         <div class="buttonsDarkBlue darkBlueGradient buttonInput" (click)='register()'>
                             <p class="bigLetters white">Registrujte se</p>
                         </div>
                         <div class="loginlink" (click)='showLoginWindow()'>
-                            Već imate korisnički nalog? <span class="darkblueletters underline"><b>Ulogujte se</b></span>
+                            Već imate korisnički nalog? <span class="darkblueletters underline"><b>Ulogujte
+                                    se</b></span>
                         </div>
                     </form>
                 </div>

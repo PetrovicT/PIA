@@ -17,8 +17,6 @@ export class UserService {
     return this.http.post(`${this.uri}/users/login`, data);
   }
 
-
-
   username: string;
   password: string;
   name: string;
@@ -57,6 +55,12 @@ export class UserService {
       username: username
     }
     return this.http.post(`${this.uri}/users/changePassword`, data);
+  }
+
+  // upload pictures and store it in images folder - backend
+  upload(data){
+    return this.http.post(`${this.uri}/images`, data);
+
   }
 }
 

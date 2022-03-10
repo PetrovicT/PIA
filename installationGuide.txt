@@ -1,0 +1,29 @@
+1. Visual Studio Code - already have at uni
+
+2. mongoDBCompass - already have at uni
+
+// ------------------------------ frontend------------------------------
+3. re-captcha - needs to be installed
+// tutorioal taken from: https://dev.to/rodrigokamada/adding-the-google-recaptcha-v2-to-an-angular-application-1o7o
+	
+	3.1 go to: https://www.google.com/recaptcha/admin/create
+	3.2 choose version2 because versio3 is beta 
+	3.3 add doamins -> localhost
+	3.4 submit
+	3.5 copy site key (important to be version2 not version3 key!): 6LdFlMgeAAAAAHgQf8YOg_K8SL489u12k670j4St
+	3.6 go to cmd->..frontend and install with command:     npm install ng-recaptcha 
+	3.7 go to src/environments/environment.ts and add siteKey
+	3.8 go to app.module.ts and add:
+		3.8.1 import { environment } from '../environments/environment';
+		3.8.2 imports, providers....
+	3.9 go to register.component.ts
+	3.10 go to register.component.html
+	3.11 run with: ng serve or if it doesnt work then: npm start    > angular-recaptcha-v2@0.0.0 start  > ng serve
+
+
+// --------------------------- backend --------------------------------
+4. for picture uploading 
+	4.1 enter command in cmd-backend:   npm install --save multer
+	4.2 code suggests me to install and I should install something like @types/multer
+
+

@@ -10,7 +10,6 @@ userRouter.route('/register').post(
     (req, res)=>new UserController().register(req, res)
 )
 
-
 userRouter.route('/changePassword').post(
     (req, res)=>new UserController().changePassword(req, res)
 )
@@ -18,6 +17,5 @@ userRouter.route('/changePassword').post(
 userRouter.route('/findUser').post(
     (req, res)=>new UserController().findUser(req, res)
 )
-
 
 export default userRouter;
